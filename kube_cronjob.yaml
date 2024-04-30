@@ -2,6 +2,7 @@ apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: my-python-app-cronjob
+  namespace: opslevel
 spec:
   schedule: "*/5 * * * *"  # Runs every 5 mins
   jobTemplate:
