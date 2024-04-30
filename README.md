@@ -1,6 +1,6 @@
 # RSS Server for Mirantis Software Releases
 
-Simple script to query the pagerduty api for escalation policies and post them as a custom event to opslevel
+Simple script to query the Pagerduty api for escalation policies and post them as a custom event to Opslevel
 
 
 ## Table of Contents
@@ -17,8 +17,8 @@ Make sure you have python3 installed as a pre-requisite.
 
 Clone the repository:
 ```shell
-git clone https://github.com/yourusername//opslevel.git
-cd rss-server
+git clone https://github.com/wkonitzer/opslevel.git
+cd opslevel
 ```
 
 Set up a virtual environment and activate it:
