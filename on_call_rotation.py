@@ -90,6 +90,7 @@ def main():
         response_pd.raise_for_status()
         pd_escalation_policies = response_pd.json()
         logging.info("Escalation policies retrieved successfully.")
+        logging.debug("Esclation policies %s", pd_escalation_policies)
     except Exception as error: # pylint: disable=broad-except
         handle_request_errors(error)
 
