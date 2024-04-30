@@ -1,7 +1,7 @@
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: my-python-app-cronjob
+  name: opslevel-pagerduty
   namespace: opslevel
 spec:
   schedule: "*/5 * * * *"  # Runs every 5 mins
@@ -10,7 +10,7 @@ spec:
       template:
         spec:
           containers:
-          - name: my-python-app
+          - name: opslevel-test
             image: msr2.konitzer.dev/wkonitzer/on_call_rotation:latest
             env:
               - name: PAGERDUTY_API_TOKEN
@@ -23,7 +23,7 @@ spec:
                   secretKeyRef:
                     name: api-tokens
                     key: OPSLEVEL_API_TOKEN
-              - name: ENVIRONMENT
-                value: "production"
+#              - name: ENVIRONMENT
+#                value: "production"
           restartPolicy: OnFailure
 
