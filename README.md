@@ -63,8 +63,9 @@ It also takes the custom environment variable:
 This will only output error logging to save on disk space.
 
 For Kubernetes integration
+```shell
 kubectl create secret generic api-tokens --from-literal=PAGERDUTY_API_TOKEN='yourTokenHere' --from-literal=OPSLEVEL_API_TOKEN='yourTokenHere'
-
+```
 
 ## Contributing
 
