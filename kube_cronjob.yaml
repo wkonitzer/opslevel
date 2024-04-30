@@ -1,0 +1,28 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: my-python-app-cronjob
+spec:
+  schedule: "0 * * * *"  # Runs at the top of every hour
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: my-python-app
+            image: msr2.konitzer.dev/wkonitzer/on_call_rotation:latest
+            env:
+              - name: PAGERDUTY_API_TOKEN
+                valueFrom:
+                  secretKeyRef:
+                    name: api-tokens
+                    key: PAGERDUTY_API_TOKEN
+              - name: OPSLEVEL_API_TOKEN
+                valueFrom:
+                  secretKeyRef:
+                    name: api-tokens
+                    key: OPSLEVEL_API_TOKEN
+              - name: ENVIRONMENT
+                value: "production"
+          restartPolicy: OnFailure
+
