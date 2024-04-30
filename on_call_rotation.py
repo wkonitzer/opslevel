@@ -29,6 +29,7 @@ Setup:
 import logging
 import os
 import requests
+import sys
 
 
 def main():
@@ -133,6 +134,7 @@ def handle_request_errors(exc):
         logging.error("A network error occurred: %s", exc)
     elif isinstance(exc, ValueError):
         logging.error("Error decoding JSON")
+    sys.exit(1)
 
 
 if __name__ == "__main__":
