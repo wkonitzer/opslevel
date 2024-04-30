@@ -1,4 +1,4 @@
-# RSS Server for Mirantis Software Releases
+# Opslevel Pager Duty On Call Check
 
 Simple script to query the Pagerduty api for escalation policies and post them as a custom event to Opslevel
 
